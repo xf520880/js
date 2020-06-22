@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 第三题：文章详情页点击字体变大
+        window.onload=function(){
+            var num=16;
+            var but1=document.querySelector("#but1");
+            var but2=document.querySelector("#but2");
+            var zi=document.querySelector("#zi");
+            but1.onclick=function(){
+                num++;
+                zi.style.fontSize=num+"px";
+            }
+            but2.onclick=function(){
+                num--;
+                zi.style.fontSize=num+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="but1">+</button>
+    <button id="but2">-</button>
+    <p id="zi">你有瑕疵</p>
+</body>
+</html>

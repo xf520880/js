@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 第二题：广告弹出窗(自动关闭)
+    需求：随便搞一张图显示 然后 等待4s后隐藏即可 */
+        var num = 4;
+        var t;
+        window.onload = function () {
+            var img1 = document.querySelector("#img1");
+            var wb = document.querySelector("#wb")
+            setTimeout(function () {
+                img1.style.display = "none";
+            }, 4000);
+            t = setInterval(function () {
+                num--;
+                wb.value = "图片还有" + num + "秒消失";
+                if (num == 0) {
+                clearInterval(t)
+                wb.style.display="none";
+            }
+            }, 1000);
+        };
+    </script>
+    <style>
+        img {
+            width: 300px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./img/1.jpg" alt="" id="img1"><br>
+    <input type="text" id="wb" value="图片还有4秒消失">
+</body>
+
+</html>

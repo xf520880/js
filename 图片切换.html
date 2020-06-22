@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+
+        #box {
+            width: 500px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: rgb(101, 121, 73);
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var img1 = document.querySelector("#img1")
+            var imgArr = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"]
+            var index = 0;
+            function myClick(idstr, fun) {
+                var btn = document.getElementById(idstr);
+                btn.onclick = fun;
+            }
+            myClick("btn1", function () {
+                index--;
+                if (index < 0) {
+                    index = imgArr.length - 1;
+                }
+                img1.src = imgArr[index];
+            })
+            myClick("btn2", function () {
+                index++;
+                if (index > imgArr.length - 1) {
+                    index = 0;
+                }
+                img1.src = imgArr[index];
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./img/1.jpg" alt="" id="img1">
+        <button id="btn1">上一张</button>
+        <button id="btn2">下一张</button>
+    </div>
+</body>
+
+</html>
